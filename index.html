@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Undangan Pernikahan</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #f8eee8;
+    color: #684b42;
+    text-align: center;
+}
+
+.cover {
+    min-height: 100vh;
+    background: linear-gradient(#0007,#0008),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200')
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    color: white;
+}
+
+.cover-content {
+    border: 2px solid #e7c9a5;
+    padding: 45px 25px;
+    max-width: 450px;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    animation: muncul 2s;
+}
+
+h1 {
+    font-size: 42px;
+    color: #eacda8;
+    margin: 20px 0;
+}
+
+button {
+    background: #a47759;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #78543d;
+}
+
+section {
+    padding: 65px 20px;
+}
+
+.container {
+    max-width: 650px;
+    margin: auto;
+}
+
+.subtitle {
+    letter-spacing: 3px;
+    color: #a47759;
+}
+
+.names {
+    font-size: 38px;
+    color: #9a7055;
+    margin: 20px 0;
+}
+
+.photo {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 120px 120px 10px 10px;
+    margin: 25px 0;
+    border: 5px solid white;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin: 20px 0;
+    box-shadow: 0 5px 20px #0001;
+}
+
+.divider {
+    color: #b78c68;
+    font-size: 30px;
+    margin: 20px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.countdown div {
+    background: #a47759;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 75px;
+}
+
+.countdown strong {
+    display: block;
+    font-size: 25px;
+}
+
+footer {
+    background: #765344;
+    color: white;
+    padding: 40px 15px;
+}
+
+#musicBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    z-index: 10;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes muncul {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN PEMBUKA -->
+<div class="cover" id="cover">
+    <div class="cover-content">
+        <p>THE WEDDING OF</p>
+        <h1>Andi & Sinta</h1>
+        <p>Kepada Yth.</p>
+        <h2 id="guest">Tamu Undangan</h2>
+        <p>Dengan penuh rasa hormat, kami mengundang Anda.</p>
+        <button onclick="openInvitation()">
+            💌 Buka Undangan
+        </button>
+    </div>
+</div>
+
+<!-- MUSIK -->
+<audio id="music" loop>
+    <source src="Al Ghazali - Amnesia (Official Lyric Video)  Soundtrack Anak Jalanan - Pelangi Records.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" onclick="toggleMusic()" class="hidden">
+    🎵
+</button>
+
+<!-- ISI UNDANGAN -->
+<main id="invitation" class="hidden">
+
+<section>
+    <div class="container">
+        <p class="subtitle">THE WEDDING OF</p>
+        <h1 class="names">Andi & Sinta</h1>
+
+        <img class="photo"
+        src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?w=600"
+        alt="Foto pasangan pengantin">
+
+        <p>
+        Dengan memohon rahmat dan ridho Allah SWT,
+        kami bermaksud menyelenggarakan pernikahan kami.
+        </p>
+
+        <div class="divider">❦</div>
+
+        <h2>Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
+        <p>
+        Merupakan suatu kehormatan dan kebahagiaan
+        bagi kami apabila Bapak/Ibu/Saudara/i
+        berkenan hadir dalam acara pernikahan kami.
+        </p>
+    </div>
+</section>
+
+<section style="background:#f0dfd2">
+    <div class="container">
+        <p class="subtitle">MEMPELAI</p>
+
+        <div class="card">
+            <h1 class="names">Andi Pratama</h1>
+            <p>Putra dari Bapak Ahmad & Ibu Siti</p>
+        </div>
+
+        <h1>&</h1>
+
+        <div class="card">
+            <h1 class="names">Sinta Amelia</h1>
+            <p>Putri dari Bapak Budi & Ibu Rina</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <p class="subtitle">SAVE THE DATE</p>
+        <h1>Hari Bahagia Kami</h1>
+
+        <div class="card">
+            <h2>Akad Nikah</h2>
+            <p>Minggu, 20 Desember 2026</p>
+            <p>Pukul 08.00 WIB - Selesai</p>
+            <div class="divider">❦</div>
+            <h2>Resepsi</h2>
+            <p>Minggu, 20 Desember 2026</p>
+            <p>Pukul 11.00 WIB - 15.00 WIB</p>
+        </div>
+
+        <h2>Hitung Mundur</h2>
+        <div class="countdown">
+            <div><strong id="days">0</strong>Hari</div>
+            <div><strong id="hours">0</strong>Jam</div>
+            <div><strong id="minutes">0</strong>Menit</div>
+            <div><strong id="seconds">0</strong>Detik</div>
+        </div>
+    </div>
+</section>
+
+<section style="background:#f0dfd2">
+    <div class="container">
+        <p class="subtitle">OUR LOCATION</p>
+        <h1>Lokasi Acara</h1>
+
+        <div class="card">
+            <h2>Gedung Serbaguna</h2>
+            <p>Jl. Contoh No. 123, Indonesia</p>
+
+            <a href="https://maps.google.com"
+            target="_blank">
+                <button>📍 Buka Google Maps</button>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <p class="subtitle">DOA DAN HARAPAN</p>
+        <h1>Terima Kasih</h1>
+        <p>
+        Merupakan kebahagiaan bagi kami apabila
+        Anda berkenan hadir dan memberikan doa restu.
+        </p>
+        <div class="divider">❦</div>
+        <h2>Andi & Sinta</h2>
+    </div>
+</section>
+
+<footer>
+    <h2>Wassalamu'alaikum Wr. Wb.</h2>
+    <p>© 2026 Wedding Invitation</p>
+</footer>
+
+</main>
+
+<script>
+const cover = document.getElementById("cover");
+const invitation = document.getElementById("invitation");
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+function openInvitation() {
+    cover.style.display = "none";
+    invitation.classList.remove("hidden");
+    musicBtn.classList.remove("hidden");
+
+    music.play().catch(() => {
+        alert("Silakan tekan tombol musik untuk memutar lagu.");
+    });
+
+    window.scrollTo(0, 0);
+}
+
+function toggleMusic() {
+    if (music.paused) {
+        music.play();
+        musicBtn.innerHTML = "🎵";
+    } else {
+        music.pause();
+        musicBtn.innerHTML = "🔇";
+    }
+}
+
+// Ganti tanggal sesuai hari pernikahan
+const weddingDate = new Date("December 20, 2026 08:00:00").getTime();
+
+setInterval(function() {
+    const now = new Date().getTime();
+    const distance = weddingDate - now;
+
+    if (distance <= 0) {
+        document.getElementById("days").innerHTML = "0";
+        document.getElementById("hours").innerHTML = "0";
+        document.getElementById("minutes").innerHTML = "0";
+        document.getElementById("seconds").innerHTML = "0";
+        return;
+    }
+
+    document.getElementById("days").innerHTML =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").innerHTML =
+        Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+    document.getElementById("minutes").innerHTML =
+        Math.floor((distance / (1000 * 60)) % 60);
+
+    document.getElementById("seconds").innerHTML =
+        Math.floor((distance / 1000) % 60);
+
+}, 1000);
+</script>
+
+</body>
+</html>
